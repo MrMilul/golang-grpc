@@ -1,0 +1,16 @@
+syntax="proto3";
+package laptostore.grpc;
+option go_package = "example.com/pb";
+
+import "messages/processor_message.proto";
+
+message Laptop{
+    string brand = 1;
+    string name = 2;
+    CPU cpu = 3;
+    repeated GPU gpus = 4;
+    oneof weight{
+        int32 wight_kg = 5;
+        int32 weight_lb = 6;
+    }
+}

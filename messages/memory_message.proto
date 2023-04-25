@@ -1,0 +1,20 @@
+syntax="proto3";
+package laptostore.grpc;
+
+option go_package = "example.com/pb";
+
+
+message Memory{
+    enum Unit{
+        UNKNOWN=0;
+        BIT=1;
+        BYTE=2;
+        MEGABYTE=3;
+        GIGABYTE=4;
+        TERABYTE=5;
+    }
+
+    int32 value = 1;
+    Unit unit = 2;
+
+}
