@@ -1,6 +1,6 @@
 package serializer
 
-import "example.com/laptop_store/messages"
+import "example.com/laptop_store/proto"
 
 func NewCPU() *pb.CPU{
 	brand := randomCPUBrand()

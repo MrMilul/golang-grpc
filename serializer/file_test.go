@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"example.com/laptop_store/serializer"
-	"example.com/laptop_store/messages"
+	"example.com/laptop_store/proto"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/protobuf/proto"
 )

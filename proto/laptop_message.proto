@@ -2,7 +2,7 @@ syntax="proto3";
 package laptostore.grpc;
 option go_package = "example.com/pb";
 
-import "messages/processor_message.proto";
+import "proto/processor_message.proto";
 
 message Laptop{
     string brand = 1;

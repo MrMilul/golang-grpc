@@ -5,7 +5,7 @@ package laptostore.grpc;
 
 option go_package="example.com/pb";
 
-import "messages/memory_message.proto";
+import "proto/memory_message.proto";
 
 message CPU {
     string name = 1;
