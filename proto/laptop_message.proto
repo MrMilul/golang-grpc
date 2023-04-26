@@ -5,12 +5,13 @@ option go_package = "example.com/pb";
 import "proto/processor_message.proto";
 
 message Laptop{
-    string brand = 1;
-    string name = 2;
-    CPU cpu = 3;
-    repeated GPU gpus = 4;
+    string id = 1;
+    string brand = 2;
+    string name = 3;
+    CPU cpu = 4;
+    repeated GPU gpus = 5;
     oneof weight{
-        int32 wight_kg = 5;
-        int32 weight_lb = 6;
+        int32 wight_kg = 6;
+        int32 weight_lb = 7;
     }
 }

@@ -1,4 +1,4 @@
-package serializer
+package sample
 
 import "example.com/laptop_store/proto"
 
@@ -38,8 +38,9 @@ func NewGPU() *pb.GPU{
 }
 
 func NewLaptop() *pb.Laptop{
-
+	id := randomId()
 	laptop := &pb.Laptop{
+		Id: id,
 		Brand: "Apple",
 		Name: "M1 Pro",
 		Cpu: NewCPU(),

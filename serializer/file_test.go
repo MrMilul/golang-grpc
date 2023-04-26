@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"example.com/laptop_store/serializer"
+	"example.com/laptop_store/sample"
 	"example.com/laptop_store/proto"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/protobuf/proto"
@@ -14,7 +15,7 @@ func TestFileSerializer(t *testing.T){
 
 	file := "../tmp/laptop.bin"
 	fileJson := "../tmp/laptop.json"
-	laptop1 := serializer.NewLaptop()
+	laptop1 := sample.NewLaptop()
 
 	err := serializer.WriteProtobufToBinary(laptop1, file)
 

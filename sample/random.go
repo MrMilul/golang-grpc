@@ -1,8 +1,10 @@
-package serializer
+package sample
 
 import (
 	"math/rand"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 func init(){
@@ -35,3 +37,7 @@ func randomInt(min, max int) int{
 func randFlout64(min, max float64) float64{
 	return min + rand.Float64() * (max - min)
 }
+
+func randomId()string{
+	return uuid.New().String()
+}	
