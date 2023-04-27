@@ -1,39 +1,39 @@
 {
-  "id": "d4f5085f-139a-461c-b497-30c705dbe466",
+  "id": "96c89fb1-60f5-48fc-aee2-32a662f251af",
   "brand": "Apple",
   "name": "M1 Pro",
   "cpu": {
-    "name": "Rayzen 9 pro",
-    "brand": "NVA",
-    "cores": 6,
-    "threads": 5,
-    "max_ghz": 8.439156288383185,
-    "min_ghz": 4.542358620474152
+    "name": "A6",
+    "brand": "Apple",
+    "cores": 4,
+    "threads": 7,
+    "max_ghz": 3.898016785088571,
+    "min_ghz": 2.964316966715967
   },
   "gpus": [
     {
-      "name": "A5",
+      "name": "A5x",
       "brand": "Apple",
-      "cores": 4,
-      "threads": 3,
+      "cores": 6,
+      "threads": 2,
       "memory": {
-        "value": 7,
+        "value": 4,
         "unit": "MEGABYTE"
       },
-      "max_ghz": 8.295322829285785,
-      "min_ghz": 3.1236928117855234
+      "max_ghz": 6.852046680613517,
+      "min_ghz": 3.4283702998153966
     },
     {
-      "name": "A4",
+      "name": "A5",
       "brand": "Apple",
-      "cores": 8,
-      "threads": 7,
+      "cores": 2,
+      "threads": 4,
       "memory": {
-        "value": 9,
+        "value": 5,
         "unit": "MEGABYTE"
       },
-      "max_ghz": 6.677304104010391,
-      "min_ghz": 4.525801862578106
+      "max_ghz": 9.441448182500558,
+      "min_ghz": 5.3623698472229595
     }
   ],
   "wight_kg": 2
