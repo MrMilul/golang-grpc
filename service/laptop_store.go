@@ -13,7 +13,10 @@ import (
 var ErrAlreadyExists = errors.New("record already exists")
 
 type LaptopStore interface{
+	// saves a laptop to the store
 	Save(*pb.Laptop) error
+	// finds a laptop by ID
+	Find(id string) (*pb.Laptop, error)
 }
 
 type InMemoryLaptopStore struct{
@@ -43,4 +46,21 @@ func (store *InMemoryLaptopStore)Save (laptop *pb.Laptop) error{
 	}
 	store.data[other.Id] = other
 	return nil
+}
+
+
+func (store *InMemoryLaptopStore)Find(id string)(*pb.Laptop, error){
+	store.mutex.Lock()
+	defer store.mutex.Unlock()
+	laptop := store.data[id]
+	if laptop == nil{
+		return nil, fmt.Errorf("There is no Laptop with %s", id)
+	}
+
+	other := &pb.Laptop{}
+	err := copier.Copy(other, laptop)
+	if err != nil{
+		return nil, fmt.Errorf("Cannot Copy laptop data: %w", err)
+	}
+	return other, nil
 }

@@ -13,9 +13,10 @@ import(
 
 type LaptopServer struct{
 	Store LaptopStore
+	pb.UnimplementedLaptopServiceServer
 }
 func NewLaptopServer(store LaptopStore) *LaptopServer{
-	return &LaptopServer{store}
+	return &LaptopServer{Store: 	store}
 }
 
 func (server LaptopServer) CreateLaptop(ctx context.Context, req *pb.CreateLaptopRequest) (*pb.CreateLaptopResponse, error){
@@ -36,6 +37,19 @@ func (server LaptopServer) CreateLaptop(ctx context.Context, req *pb.CreateLapto
 		laptop.Id = id.String()
 	}
 
+	// Check if the request timeout is exceeded
+	if ctx.Err() == context.DeadlineExceeded{
+		log.Printf("Deadline is exceeded")
+
+		return nil, status.Errorf(codes.DeadlineExceeded, "Deadline is exceeded")
+	}
+
+	// Check if the request is cancelled by client 
+	if ctx.Err() == context.Canceled{
+		log.Printf("Request is canceled")
+
+		return nil, status.Errorf(codes.Canceled, "Request is canceled")
+	}
 	// Save data to the db. 
 	// In this project the main focus is on the gRPC so we use in-memory storage. 
 	err := server.Store.Save(laptop)
