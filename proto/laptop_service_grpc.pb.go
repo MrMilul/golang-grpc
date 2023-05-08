@@ -43,7 +43,7 @@ func (c *laptopServiceClient) CreateLaptop(ctx context.Context, in *CreateLaptop
 }
 
 // LaptopServiceServer is the server API for LaptopService service.
-// All implementations must embed UnimplementedLaptopServiceServere
+// All implementations must embed UnimplementedLaptopServiceServer
 // for forward compatibility
 type LaptopServiceServer interface {
 	CreateLaptop(context.Context, *CreateLaptopRequest) (*CreateLaptopResponse, error)

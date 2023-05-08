@@ -28,7 +28,7 @@ func NewUser(username string, password string, role string)(*User, error){
 
 func (user *User)IsCorrectPassword(password string)bool{
 	err := bcrypt.CompareHashAndPassword([]byte(user.HashPassword), []byte(password))
-	return err != nil
+	return err == nil
 }
 
 func (user *User)Clone() *User {

@@ -55,9 +55,9 @@ func (manager *JWTManager) TokenVerification(accessToken string)(*UserClaims, er
 	if err != nil{
 		return nil, fmt.Errorf("Invalid token: %w", err)
 	}
-	claims, ok := token.Claims(*UserClaims)
+	claims, ok := token.Claims.(*UserClaims)
 	if !ok {
 		return nil, fmt.Errorf("Invalid token claims")
 	}
-	return claims, nil
+	return claims,nil
 }
